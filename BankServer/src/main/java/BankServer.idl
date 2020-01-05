@@ -1,0 +1,15 @@
+module BankServerApp
+{
+    interface BankServer
+    {
+        boolean checkAcntNum (in long acntNum);
+        boolean checkAcntStatus (in long acntNum);
+        boolean verifyAcntPin (in long acntNum, in long acntPin);
+        void lockAcnt (in long acntNum);
+        void makeDeposit (in long acntNum, in long amount);
+        void makeWithdrawal (in long acntNum, in long amount);
+        double checkBalance (in long acntNum);
+        boolean checkOverdraft (in long acntNum, in double amount);
+        void getTransactions (in long acntNum, in wstring startDate, in wstring endDate, in wstring emailAddr);
+    };
+};
